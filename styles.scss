@@ -13,7 +13,7 @@ body {
   height: 100vh;
   z-index: -1;
 
-  background: linear-gradient(10deg, orangered 0%, orange, black 85%);
+  background: var(--tg-theme-bg-color);
 }
 
 button {
@@ -22,7 +22,8 @@ button {
 }
 
 .btn {
-  background-color: #fff1;
+  background-color: #fff2;
+  border: 1px solid #fff2;
   color: white;
   border-radius: 2vw;
   backdrop-filter: blur(5 vw);
