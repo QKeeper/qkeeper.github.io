@@ -1,1 +1,51 @@
-/*# sourceMappingURL=styles.css.map */
+body {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(10deg, orangered 0%, orange, black 85%);
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.0666666667);
+  color: white;
+  border-radius: 2vw;
+  -webkit-backdrop-filter: blur(5 vw);
+          backdrop-filter: blur(5 vw);
+}
+
+.btn-pri {
+  height: 48px;
+  font-size: 18px;
+}
+
+.btn-sec {
+  height: 32px;
+  font-size: 16px;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-thr {
+  height: 32px;
+  font-size: 14px;
+  padding-inline: 4vw;
+}/*# sourceMappingURL=styles.css.map */
