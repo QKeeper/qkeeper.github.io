@@ -1,3 +1,12 @@
-const WebApp = window.Telegram.WebApp
+const tg = window.Telegram.WebApp
 
-WebApp.showAlert(`Welcome, @${WebApp.WebAppUser.username}!`)
+// document.querySelector(".id").textContent = ""
+
+const id = tg.initTransferUnsafe.user.id
+console.log(id)
+
+const username = tg.initTransferUnsafe.user.username
+console.log(username)
+
+const name = tg.initTransferUnsafe.user.first_name
+console.log(name)
