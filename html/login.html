@@ -37,6 +37,9 @@
 						return result.handler();
 					})
 					.then(async function (data) {
+						console.log("Сообщение с токеном: ", data);
+						document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
+
 						let response = await fetch("http://26.145.207.158:5180/home/authentication", {
 							method: "GET",
 							headers: {
