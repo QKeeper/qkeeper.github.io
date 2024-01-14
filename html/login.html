@@ -6,7 +6,6 @@
 		<title>Document</title>
 
 		<script src="https://yastatic.net/s3/passport-sdk/autofill/v1/sdk-suggest-with-polyfills-latest.js"></script>
-		<script src="../js/login.js"></script>
 
 		<link rel="stylesheet" href="../css/reset.css" />
 		<link rel="stylesheet" href="../css/style.css" />
@@ -16,10 +15,37 @@
 		<header>
 			<h1>Парсер рекламных объявлений</h1>
 		</header>
-		<main>
-			<button class="yandex">
-				<img src="../src/Yandex.svg" alt="Login" />
-			</button>
-		</main>
+		<main></main>
+		<script>
+			window.onload = function () {
+				window.YaAuthSuggest.init(
+					{
+						client_id: "3d1521abaf6f431d95945effad470a80",
+						response_type: "token",
+						redirect_uri: "https://qkeeper.github.io/token",
+					},
+					"https://qkeeper.github.io/",
+					{
+						view: "button",
+						parentId: "container",
+						buttonView: "main",
+						buttonTheme: "light",
+						buttonSize: "m",
+						buttonBorderRadius: 0,
+					}
+				)
+					.then(function (result) {
+						return result.handler();
+					})
+					.then(function (data) {
+						console.log("Сообщение с токеном: ", data);
+						document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
+					})
+					.catch(function (error) {
+						console.log("Что-то пошло не так: ", error);
+						document.body.innerHTML += `Что-то пошло не так: ${JSON.stringify(error)}`;
+					});
+			};
+		</script>
 	</body>
 </html>

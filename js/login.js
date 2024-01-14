@@ -4,7 +4,7 @@ window.YaAuthSuggest.init(
 		response_type: "token",
 		redirect_uri: "https://qkeeper.github.io/token",
 	},
-	"https://github.io/",
+	"https://qkeeper.github.io/",
 	{
 		view: "button",
 		parentId: "buttonContainerId",
