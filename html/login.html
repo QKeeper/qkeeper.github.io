@@ -36,9 +36,19 @@
 					.then(function (result) {
 						return result.handler();
 					})
-					.then(function (data) {
-						console.log("Сообщение с токеном: ", data);
-						document.body.innerHTML += `Сообщение с токеном: ${JSON.stringify(data)}`;
+					.then(async function (data) {
+						let response = await fetch("http://26.145.207.158:5180/home/authentication", {
+							method: "GET",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify({ access_token: data.access_token }),
+						});
+						if (response.ok) {
+							let json = await response.json();
+						} else {
+							alert("Ошибка HTTP: " + response.status);
+						}
 					})
 					.catch(function (error) {
 						console.log("Что-то пошло не так: ", error);
