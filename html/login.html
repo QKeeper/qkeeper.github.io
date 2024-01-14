@@ -44,6 +44,7 @@
 							method: "GET",
 							headers: {
 								"Content-Type": "application/json",
+								Authorization: data.access_token,
 							},
 							body: JSON.stringify({ access_token: data.access_token }),
 						});
